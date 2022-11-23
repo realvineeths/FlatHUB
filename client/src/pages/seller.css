@@ -1,0 +1,22 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input , button , select, textarea{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    margin: 5px;
+  
+  }
+  
+  .flat {
+    width: 500px;
+    height: 300px;
+    border: 2px solid;
+    margin : 10px;
+  }
