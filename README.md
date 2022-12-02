@@ -8,6 +8,7 @@
 
 This a `MERN` stack project, which is built as a platform to `BUY/SELL` a user's flat/property on our website.
 
+
 We have 4 modules total in this project:
 * Seller's View
 * Buyer's View
@@ -26,6 +27,8 @@ We have 4 modules total in this project:
 
 ![Screenshot (99)](https://user-images.githubusercontent.com/85937627/205233798-71a9e2c8-81fc-446d-9c71-9f3ac9a03d76.png)
 
+
+
 ### Price Prediction
 
 ![Screenshot (100)](https://user-images.githubusercontent.com/85937627/205233921-0163f23e-3bf3-4346-ac61-53397381c27c.png)
@@ -36,7 +39,15 @@ We have 4 modules total in this project:
 
 
 ## BUILT WITH
+[![68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3230323332413f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d363144414642](https://user-images.githubusercontent.com/85937627/205235104-70b6bb88-b9ad-42e9-be08-ea16a5c412a8.svg)](https://reactjs.org/)
 
-* [![React][React.js]]https://camo.githubusercontent.com/268ac512e333b69600eb9773a8f80b7a251f4d6149642a50a551d4798183d621/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3230323332413f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d363144414642
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+[![express-js](https://user-images.githubusercontent.com/85937627/205235410-7cf7dba7-62bb-408a-abac-e2630b569a38.png)](https://expressjs.com/)
+[![node-js](https://user-images.githubusercontent.com/85937627/205235628-e783d4bc-bcb7-4433-8109-1d345964c1f2.png)](https://nodejs.org/en/)
+
+[![python](https://user-images.githubusercontent.com/85937627/205236409-66195594-c023-4e0b-893e-5ee8daf4741b.png)](https://www.python.org/)
+
+[![bootstrap](https://user-images.githubusercontent.com/85937627/205236141-a857fc6b-ff2d-46fc-badd-cec970e9d957.png)](https://getbootstrap.com/)
+[![sass](https://user-images.githubusercontent.com/85937627/205236125-eb062410-0b91-49f3-8f25-3669cfb75837.png)](https://sass-lang.com/)
+
+[![mongodb](https://user-images.githubusercontent.com/85937627/205236782-592de424-9344-4510-93dc-743216ed68c1.png)](https://www.mongodb.com/home)
 
