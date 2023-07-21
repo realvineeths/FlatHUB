@@ -12,8 +12,6 @@ const {
 } = require("../authenticate");
 
 router.post("/register", (req, res, next) => {
-  // Verify that first name is not empty
-  // console.log(req.body);
   if (!req.body.firstName) {
     res.statusCode = 500;
     res.send({
@@ -52,6 +50,7 @@ router.post("/register", (req, res, next) => {
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
 
   const token = getToken({ _id: req.user._id });
+  // console.log(req);
   // console.log(token);
   const refreshToken = getRefreshToken({ _id: req.user._id });
   User.findById(req.user._id).then(
@@ -74,7 +73,7 @@ router.post("/login", passport.authenticate("local"), (req, res, next) => {
 router.post("/refreshToken", (req, res, next) => {
   const { signedCookies = {} } = req;
   const { refreshToken } = signedCookies;
-  console.log('inside refresh..');
+  console.log('inside refresh..',refreshToken);
   if (refreshToken) {
     try {
       const payload = jwt.verify(
