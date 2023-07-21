@@ -34,9 +34,7 @@ const flatSchema = new Schema({
 }
 );
 
-const mydbvar2 = mongoose.connection.useDb('flatHub')
 
-
-const flats = mydbvar2.model('flats',flatSchema);
+const flats = mongoose.model('flats',flatSchema);
 
 module.exports = flats;

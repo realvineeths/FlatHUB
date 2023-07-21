@@ -42,6 +42,4 @@ User.set("toJSON", {
 
 User.plugin(passportLocalMongoose);
 
-const mydbvar1 = mongoose.connection.useDb('mern_auth')
-
-module.exports = mydbvar1.model("User", User);
+module.exports = mongoose.model("User", User);
