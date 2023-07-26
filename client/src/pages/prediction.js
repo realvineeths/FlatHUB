@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import Footer from '../components/footer';
-import Navbar from '../components/nav';
 import Navbar1 from '../components/navbar';
 import './prediction.css'
 

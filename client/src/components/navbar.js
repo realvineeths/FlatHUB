@@ -1,13 +1,12 @@
 import React,{useContext} from 'react'
 import './nav1.scss'
-import './nav1'
+// import './nav1'
 import { Link } from 'react-router-dom'
-import { StateContext } from '../StateContext';
 
 
 export default function Navbar1() {
     const logoutHandler=(e)=>{
-      e.preventDefault();
+      // e.preventDefault();
       localStorage.removeItem("userstore");
     }
 

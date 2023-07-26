@@ -21,10 +21,13 @@ const Login1 = () => {
 
   async function handleSubmit(e)
   {
-      e.preventDefault();
+      // e.preventDefault();
       setError("");
       setUser(name);
   }
+  // const isPresentUser=localStorage.getItem("userstore");
+
+
 
   useEffect(() => {    
     return () => {

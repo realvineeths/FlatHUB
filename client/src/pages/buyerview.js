@@ -2,7 +2,6 @@ import  React, {Component, useEffect,useState,useContext} from 'react'
 import './cardisp1.scss'
 // import Navbar from './navbar';
 import { StateContext } from '../StateContext';
-import Navbar from '../components/nav'
 import { Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import Navbar1 from '../components/navbar';
@@ -157,10 +156,7 @@ function Buyerview() {
               }
               </select>
 
-              {/* <p>{queryroom}</p>                */}
             </li>
-
-
           </ul>
         </div>
 
@@ -179,7 +175,7 @@ function Buyerview() {
                         return <Link to={"details/"+card._id} ><RenderCard card={card} key={index}/> </Link>
                         // </div>
                       }
-                      )                   
+                      )    
                     }
               </div>
             </div>  
@@ -188,7 +184,7 @@ function Buyerview() {
         </Container>
 
         </>
-    )    
+    )
 
 }
 
