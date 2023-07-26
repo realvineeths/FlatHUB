@@ -2,7 +2,6 @@ import React,{useEffect,useContext,useCallback} from 'react'
 import { StateContext } from '../StateContext';
 import Loader from '../loader';
 import './homepage.css'
-import Navbar from '../components/nav';
 import { Link } from 'react-router-dom';
 import Navbar1 from '../components/navbar';
 import Footer from '../components/footer';
@@ -40,23 +39,24 @@ export default function Homepage() {
       });
     }, [setContext, stateContext.token]);
   
-    useEffect(() => {
-      // fetch only when user details are not present
-      console.log(stateContext.username);
-      console.log('fetching..');
-      if (!stateContext.details) {
-        fetchUserDetails();
-      }
-    }, [stateContext.details, fetchUserDetails]);
+    // useEffect(() => {
+    //   // fetch only when user details are not present
+    //   console.log(stateContext.username);
+    //   console.log('fetching..');
+    //   if (!stateContext.details) {
+    //     fetchUserDetails();
+    //   }
+    // }, [stateContext.details, fetchUserDetails]);
 
 
 
-    return stateContext.details === null ? (
-        "Error Loading User details"
-      ) : !stateContext.details ? (
-        < Loader/>
-      ) :
-       (
+    // return stateContext.details === null ? (
+    //     "Error Loading User details"
+    //   ) : !stateContext.details ? (
+    //     < Loader/>
+    //   ) :
+
+      return (
     <>        
         {/* <Navbar/> */}
         <Navbar1/>

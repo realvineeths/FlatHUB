@@ -3,13 +3,8 @@ const flats=require('../models/flats')
 const router=express.Router();
 
 
-
-router.get('/getprop',async (req,res)=>{
+router.get('/getprop',async (req,res)=>{//for buyer's view
     const {loc,cty,sqft,prc,bhk}=req.query;
-
-    // {BHK_NO:{$eq:bhk}}
-    // const {bhk}=req.query;
-    console.log(req.query);
 
     flats.find({City:cty,SQUARE_FT:{$lte:sqft},PRICE:{$lte:prc},BHK_NO:bhk,ADDRESS:{$regex:loc,$options : 'i'}},function(err,docs){
         if(err)
@@ -24,7 +19,7 @@ router.get('/getprop',async (req,res)=>{
     })
 })
 
-router.get('/getdetails',(req,res)=>{
+router.get('/getdetails',(req,res)=>{//for buyer's view detailed view
 
     const {propid}=req.query;
 
@@ -37,9 +32,6 @@ router.get('/getdetails',(req,res)=>{
             res.json(docs)
         }
     })
-
-    // console.log(propid);
-    // res.sendStatus(200)
 })
 
 
@@ -72,7 +64,6 @@ router.put("/update", async (req, res) => {
 
     console.log(req.body.newTarget_price);
     const TARGET_PRICE = req.body.newTarget_price;
-    // const City = req.body.City;
     const id = req.body.id;
     try {
         await flats.findById(id, (err, updated) => {
@@ -94,7 +85,7 @@ router.delete("/delete/:id", async (req, res) => {
 router.get("/readadmin", async (req, res) => {
     console.log('reading..',req.query)
     const {username,loc}=req.query;
-     flats.find({POSTED_BY:username,ADDRESS:{$regex:loc,$options : 'i'}}, (err, result) => { //{$where:{POSTED_BY: "User_id"}
+     flats.find({POSTED_BY:username,ADDRESS:{$regex:loc,$options : 'i'}}, (err, result) => { 
         if (err) {
             res.send(err)
         }
@@ -102,10 +93,9 @@ router.get("/readadmin", async (req, res) => {
     });
 });
 
-router.get("/read", async (req, res) => {
-    console.log('reading..',req.query)
+router.get("/read", async (req, res) => { //for querying details in seller's view
     const {username}=req.query;
-     flats.find({POSTED_BY:username}, (err, result) => { //{$where:{POSTED_BY: "User_id"}
+     flats.find({POSTED_BY:username}, (err, result) => {
         if (err) {
             res.send(err)
         }

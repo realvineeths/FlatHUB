@@ -9,191 +9,6 @@ import Navbar1 from '../components/navbar';
 import Footer from '../components/footer';
 
 function Buyerview() {
-    const arr=  [{
-        // _id: ObjectId("6370940139c0cbcc5ca44332"),
-        Price: 8716000,
-        Area: 1575,
-        Location: 'Jalahalli',
-        'No_of Bedrooms': 3,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 0,
-        RainWaterHarvesting: 1,
-        IndoorGames: 1,
-        SportsFacility: 0,
-        ClubHouse: 0,
-        '24X7Security': 1,
-        PowerBackup: 0,
-        CarParking: 0,
-        Cafeteria: 0,
-        MultipurposeRoom: 1,
-        "Children'splayarea": 1,
-        LiftAvailable: 0,
-        VaastuCompliant: 0
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44333"),
-        Price: 5394000,
-        Area: 1120,
-        Location: 'Kasavanahalli',
-        'No_of Bedrooms': 2,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 0,
-        RainWaterHarvesting: 0,
-        IndoorGames: 1,
-        SportsFacility: 0,
-        ClubHouse: 1,
-        '24X7Security': 0,
-        PowerBackup: 1,
-        CarParking: 1,
-        Cafeteria: 1,
-        MultipurposeRoom: 1,
-        "Children'splayarea": 1,
-        LiftAvailable: 1,
-        VaastuCompliant: 1
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44334"),
-        Price: 6367000,
-        Area: 1415,
-        Location: 'Whitefield Hope Farm Junction',
-        'No_of Bedrooms': 3,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 1,
-        RainWaterHarvesting: 1,
-        IndoorGames: 0,
-        SportsFacility: 0,
-        ClubHouse: 0,
-        '24X7Security': 0,
-        PowerBackup: 1,
-        CarParking: 0,
-        Cafeteria: 0,
-        MultipurposeRoom: 0,
-        "Children'splayarea": 1,
-        LiftAvailable: 1,
-        VaastuCompliant: 0
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44335"),
-        Price: 5080000,
-        Area: 1270,
-        Location: 'Bommasandra',
-        'No_of Bedrooms': 2,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 1,
-        RainWaterHarvesting: 1,
-        IndoorGames: 1,
-        SportsFacility: 0,
-        ClubHouse: 0,
-        '24X7Security': 1,
-        PowerBackup: 1,
-        CarParking: 1,
-        Cafeteria: 0,
-        MultipurposeRoom: 1,
-        "Children'splayarea": 0,
-        LiftAvailable: 1,
-        VaastuCompliant: 0
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44336"),
-        Price: 7209999,
-        Area: 1311,
-        Location: 'Bellandur',
-        'No_of Bedrooms': 3,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 1,
-        RainWaterHarvesting: 1,
-        IndoorGames: 1,
-        SportsFacility: 0,
-        ClubHouse: 1,
-        '24X7Security': 1,
-        PowerBackup: 1,
-        CarParking: 1,
-        Cafeteria: 0,
-        MultipurposeRoom: 0,
-        "Children'splayarea": 1,
-        LiftAvailable: 1,
-        VaastuCompliant: 1
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44337"),
-        Price: 5700000,
-        Area: 1210,
-        Location: 'RR Nagar',
-        'No_of Bedrooms': 2,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 1,
-        RainWaterHarvesting: 1,
-        IndoorGames: 0,
-        SportsFacility: 0,
-        ClubHouse: 1,
-        '24X7Security': 0,
-        PowerBackup: 1,
-        CarParking: 1,
-        Cafeteria: 0,
-        MultipurposeRoom: 1,
-        "Children'splayarea": 1,
-        LiftAvailable: 1,
-        VaastuCompliant: 1
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44338"),
-        Price: 30000000,
-        Area: 3340,
-        Location: 'JP Nagar Phase 1',
-        'No_of Bedrooms': 4,
-        MaintenanceStaff: 1,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 1,
-        RainWaterHarvesting: 1,
-        IndoorGames: 1,
-        SportsFacility: 1,
-        ClubHouse: 1,
-        '24X7Security': 1,
-        PowerBackup: 1,
-        CarParking: 0,
-        Cafeteria: 0,
-        MultipurposeRoom: 0,
-        "Children'splayarea": 1,
-        LiftAvailable: 1,
-        VaastuCompliant: 0
-      },
-      {
-        // _id: ObjectId("6370940139c0cbcc5ca44339"),
-        Price: 7888000,
-        Area: 1045,
-        Location: 'Dasarahalli on Tumkur Road',
-        'No_of Bedrooms': 2,
-        MaintenanceStaff: 0,
-        Gymnasium: 1,
-        SwimmingPool: 1,
-        JoggingTrack: 1,
-        RainWaterHarvesting: 1,
-        IndoorGames: 1,
-        SportsFacility: 1,
-        ClubHouse: 1,
-        '24X7Security': 1,
-        PowerBackup: 1,
-        CarParking: 1,
-        Cafeteria: 0,
-        MultipurposeRoom: 1,
-        "Children'splayarea": 1,
-        LiftAvailable: 1,
-        VaastuCompliant: 1
-      }
-    ]
 
     const cities=['Bangalore', 'Mysore', 'Ghaziabad', 'Kolkata', 'Kochi', 'Jaipur',
     'Mohali', 'Chennai', 'Siliguri', 'Noida', 'Raigad', 'Bhubaneswar',
@@ -242,7 +57,6 @@ function Buyerview() {
     'Malappuram', 'Betul', 'Surendranagar', 'Phagwara', 'Visnagar',
     'Rajnandgaon', 'Cuddalore', 'Raichur', 'Sambalpur', 'Gondia',
     'Vellore', 'Bharatpur', 'Bhuj', 'Siwan', 'Washim']
-    
 
     const [stateContext, setContext] = useContext(StateContext);
     const [posts,setPosts]=useState([]);
@@ -251,9 +65,8 @@ function Buyerview() {
     const [queryarea,setQueryarea]=useState(5000);
     const [queryroom,setQueryroom]=useState(3);
     const [querycity,setQuerycity]=useState('Bangalore');
-    
+
     async function getFlats(){
-      http://localhost:8888/getprop?bhk=2&sqft=1400&prc=100&cty=Bangalore&loc=electronic      
         await fetch(`http://localhost:8081/flat/getprop?bhk=${queryroom}&sqft=${queryarea}&prc=${queryprice}&cty=${querycity}&loc=${query}`)
             .then(function(res){
                 return res.json();
@@ -264,21 +77,8 @@ function Buyerview() {
                 setPosts(items)
                 // console.log(items);
             })
-
-            // .then(response=>{
-            //     // console.log(response);
-            //     console.log(response.json())
-            // })
-            // .catch((e)=>{
-            //     console.log(e);
-            // }
-            // )
     }
 
-    // useEffect(()=>{
-    //     getFlats()
-    // },[query]) 
-    
     useEffect(()=>{
       getFlats()
     },[query,queryprice,queryarea,querycity,queryroom])
@@ -286,9 +86,6 @@ function Buyerview() {
     console.log('context',stateContext.username);
 
     const RenderCard=({card})=>{
-      // console.log(index);
-      // console.log(card);
-      // key={indexnum}
         return (
             <div className="preview-card" >
                 <div className="preview-card__wrp">
@@ -308,17 +105,15 @@ function Buyerview() {
             </div>                        
         )
     }
-    console.log(query);
-    console.log(queryprice);
-    console.log(queryarea);
-    console.log(queryroom);
-    console.log(querycity);
+    // console.log(query);
+    // console.log(queryprice);
+    // console.log(queryarea);
+    // console.log(queryroom);
+    // console.log(querycity);
 
     return (
 
         <>
-
-        {/* <Navbar/> */}
         <Navbar1/>
         <div className="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
 
@@ -334,7 +129,6 @@ function Buyerview() {
               }}/>  
               <p>₹{queryprice} Lakh only</p>            
             </li>
-
 
             <li href="#" className="nav-link">
             <h7>Enter Area Range</h7>
@@ -380,7 +174,6 @@ function Buyerview() {
             <div className="container" >
               <div className="row mt-5" >
                   {
-                    // posts.map(renderCard)
                       posts.map((card,index)=>{
                         // <div onClick={console.log('clicked')}>
                         return <Link to={"details/"+card._id} ><RenderCard card={card} key={index}/> </Link>
