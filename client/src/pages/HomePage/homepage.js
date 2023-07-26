@@ -1,63 +1,16 @@
 import React,{useEffect,useContext,useCallback} from 'react'
-import { StateContext } from '../StateContext';
-import Loader from '../loader';
+import Loader from '../../loader';
 import './homepage.css'
 import { Link } from 'react-router-dom';
-import Navbar1 from '../components/navbar';
-import Footer from '../components/footer';
+import Navbar1 from '../../components/navbar';
+import Footer from '../../components/footer';
 // import Navbar from './navbar'
 
 export default function Homepage() {
 
-    const [stateContext, setContext] = useContext(StateContext);
-
-    const fetchUserDetails = useCallback(() => {
-      fetch("http://localhost:8081/users/me", {
-        method: "GET",
-        credentials: "include",
-        // Pass authentication token as bearer token in header
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${stateContext.token}`,
-        },
-      }).then(async (response) => {
-        if (response.ok) {
-          const data = await response.json();
-          setContext((oldValues) => {
-            return { ...oldValues, details: data };
-          });
-        } else {
-          if (response.status === 401) {
-            // Edge case: when the token has expired.
-            window.location.reload();
-          } else {
-            setContext((oldValues) => {
-              return { ...oldValues, details: null };
-            });
-          }
-        }
-      });
-    }, [setContext, stateContext.token]);
-  
-    // useEffect(() => {
-    //   // fetch only when user details are not present
-    //   console.log(stateContext.username);
-    //   console.log('fetching..');
-    //   if (!stateContext.details) {
-    //     fetchUserDetails();
-    //   }
-    // }, [stateContext.details, fetchUserDetails]);
-
-
-
-    // return stateContext.details === null ? (
-    //     "Error Loading User details"
-    //   ) : !stateContext.details ? (
-    //     < Loader/>
-    //   ) :
 
       return (
-    <>        
+    <>
         {/* <Navbar/> */}
         <Navbar1/>
         <div className="jumbotron">

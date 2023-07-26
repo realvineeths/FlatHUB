@@ -1,12 +1,12 @@
 import {BrowserRouter,Route, Routes} from 'react-router-dom';
 import { useEffect,useState} from "react";
 import Loader from './loader';
-import Homepage from './pages/homepage';
-import Buyerview from './pages/buyerview';
-import Flattemplate from './pages/flattemplate';
-import Seller from './pages/sellerview';
+import Homepage from './pages/HomePage/homepage';
+import Buyerview from './pages/BuyerView/buyerview';
+import Flattemplate from './pages/FlatDetailTemplate/flattemplate';
+import Seller from './pages/SellerView/sellerview';
 import './App.css'
-import Login1 from './login/login1';
+import Login1 from './pages/login/login1';
 import Predict1 from './predictview/predict1';
 
 function App() {

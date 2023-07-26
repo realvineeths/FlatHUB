@@ -1,11 +1,9 @@
 import  React, {Component, useEffect,useState,useContext} from 'react'
 import './cardisp1.scss'
-// import Navbar from './navbar';
-import { StateContext } from '../StateContext';
 import { Container } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
-import Navbar1 from '../components/navbar';
-import Footer from '../components/footer';
+import Navbar1 from '../../components/navbar';
+import Footer from '../../components/footer';
 
 function Buyerview() {
 
@@ -57,7 +55,6 @@ function Buyerview() {
     'Rajnandgaon', 'Cuddalore', 'Raichur', 'Sambalpur', 'Gondia',
     'Vellore', 'Bharatpur', 'Bhuj', 'Siwan', 'Washim']
 
-    const [stateContext, setContext] = useContext(StateContext);
     const [posts,setPosts]=useState([]);
     const [query,setQuery]=useState("");
     const [queryprice,setQueryprice]=useState(100);
@@ -81,8 +78,6 @@ function Buyerview() {
     useEffect(()=>{
       getFlats()
     },[query,queryprice,queryarea,querycity,queryroom])
-
-    console.log('context',stateContext.username);
 
     const RenderCard=({card})=>{
         return (

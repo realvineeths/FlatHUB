@@ -5,7 +5,7 @@ const router=express.Router();
 
 router.get('/getprop',async (req,res)=>{//for buyer's view
     const {loc,cty,sqft,prc,bhk}=req.query;
-
+    console.log('in buyers');
     flats.find({City:cty,SQUARE_FT:{$lte:sqft},PRICE:{$lte:prc},BHK_NO:bhk,ADDRESS:{$regex:loc,$options : 'i'}},function(err,docs){
         if(err)
         {
@@ -95,6 +95,7 @@ router.get("/readadmin", async (req, res) => {
 
 router.get("/read", async (req, res) => { //for querying details in seller's view
     const {username}=req.query;
+    console.log('in seller query',username);
      flats.find({POSTED_BY:username}, (err, result) => {
         if (err) {
             res.send(err)

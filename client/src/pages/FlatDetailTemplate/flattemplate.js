@@ -1,8 +1,8 @@
 import React ,{useEffect,useState}from 'react'
 import './template.css'
 import {useLocation} from "react-router-dom";
-import Navbar1 from '../components/navbar';
-import Footer from '../components/footer';
+import Navbar1 from '../../components/navbar';
+import Footer from '../../components/footer';
 
 function Flattemplate() {
 

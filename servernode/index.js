@@ -7,8 +7,6 @@ const mongoose = require('mongoose')
 
 
 if (process.env.NODE_ENV !== "production") {
-  // Load environment variables from .env file in non prod environments
-  // console.log('dev..');
   require("dotenv").config();
 }
 
@@ -16,6 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/emo1', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
+  useFindAndModify: false
 }).then(() => {
   console.log('DB connected');
 })
