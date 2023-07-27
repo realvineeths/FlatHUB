@@ -103,7 +103,7 @@ function Flattemplate() {
         </div>
     </div>
     </div>    
-    <Footer/>
+    {/* <Footer/> */}
     
     </>
 

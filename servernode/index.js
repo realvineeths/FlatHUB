@@ -5,12 +5,12 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const mongoose = require('mongoose')
 
-
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
-mongoose.connect('mongodb://127.0.0.1:27017/emo1', {
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config();
+// }
+require("dotenv").config();
+// mongodb://127.0.0.1:27017/emo1
+mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -36,13 +36,10 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(cookieParser(process.env.COOKIE_SECRET));
 
-//Add the client URL to the CORS policy
-
-const whitelist = process.env.WHITELISTED_DOMAINS
-  ? process.env.WHITELISTED_DOMAINS.split(",")
-  : [];
+// const whitelist = process.env.WHITELISTED_DOMAINS
+//   ? process.env.WHITELISTED_DOMAINS.split(",")
+//   : [];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -58,7 +55,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 app.use("/users", userRouter);
 app.use("/flat", flatRouter);

@@ -7,7 +7,7 @@ import Flattemplate from './pages/FlatDetailTemplate/flattemplate';
 import Seller from './pages/SellerView/sellerview';
 import './App.css'
 import Login1 from './pages/login/login1';
-import Predict1 from './predictview/predict1';
+import Predict1 from './pages/PredictView/predict1';
 
 function App() {
 

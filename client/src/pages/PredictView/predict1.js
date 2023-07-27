@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import Footer from '../components/footer';
-import Navbar1 from '../components/navbar';
+import Footer from '../../components/footer';
+import Navbar1 from '../../components/navbar';
 import './predict.scss'
 
 function Predict1() {
@@ -157,7 +157,7 @@ function Predict1() {
         </div>
       </div>
     </div>
-    <Footer/>
+    {/* <Footer/> */}
     </>    
   )
 }

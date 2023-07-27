@@ -175,7 +175,7 @@ function Buyerview() {
               </div>
             </div>  
 
-            <Footer/>    
+            {/* <Footer/>     */}
         </Container>
 
         </>
