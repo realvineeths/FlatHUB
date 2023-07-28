@@ -16,12 +16,7 @@ require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, '/../client/build')));
 
-mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}).then(() => {
+mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
   console.log('DB connected');
 })
   .catch((e) => {
