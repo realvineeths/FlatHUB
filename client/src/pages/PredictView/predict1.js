@@ -149,7 +149,8 @@ function Predict1() {
                 <label className="form-check-label" for="inlineRadio2">No</label>
             </div>
 
-            <button type="submit" >Submit</button>
+            <h2 className='disable'>Working on Production,will get back soon! 😢</h2>
+            {/* <button type="submit" disabled>Prediction Disabled in Production</button> */}
 
               {/* {error } */}
             {/* <button type="submit" >Login</button> */}

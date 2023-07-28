@@ -63,7 +63,7 @@ function Buyerview() {
     const [querycity,setQuerycity]=useState('Bangalore');
 
     async function getFlats(){
-        await fetch(`http://localhost:8081/flat/getprop?bhk=${queryroom}&sqft=${queryarea}&prc=${queryprice}&cty=${querycity}&loc=${query}`)
+        await fetch(`/flat/getprop?bhk=${queryroom}&sqft=${queryarea}&prc=${queryprice}&cty=${querycity}&loc=${query}`)
             .then(function(res){
                 // console.log(res);
                 return res.json();

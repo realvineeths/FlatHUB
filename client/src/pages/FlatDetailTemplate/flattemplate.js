@@ -12,7 +12,7 @@ function Flattemplate() {
     const getpropDetails=async ()=>{
         console.log(propid);
 
-        await fetch(`http://localhost:8081/flat/getdetails?propid=${propid}`)
+        await fetch(`/flat/getdetails?propid=${propid}`)
             .then(function(res){
                 return res.json();
             })

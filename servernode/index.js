@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const mongoose = require('mongoose')
+const path=require('path')
+const app = express();
 
 
 // if (process.env.NODE_ENV !== "production") {
@@ -11,6 +13,9 @@ const mongoose = require('mongoose')
 // }
 require("dotenv").config();
 // mongodb://127.0.0.1:27017/emo1
+
+app.use(express.static(path.join(__dirname, '/../client/build')));
+
 mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -32,7 +37,6 @@ require("./authenticate");
 const userRouter = require("./routes/userRoutes");
 const flatRouter = require('./routes/flatRouter')
 
-const app = express();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -57,7 +61,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+app.use(cors('*'));
 
 app.use(passport.initialize());
 

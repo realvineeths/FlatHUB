@@ -61,7 +61,7 @@ function Footer() {
     </div>
 	<div class="row">
 		<div class="col-md-12 copy">
-			<p class="text-center">&copy; Copyright 2018 - flatHub.  All rights reserved.</p>
+			<p class="text-center">&copy; Copyright 2023 - flatHub.  All rights reserved.</p>
 		</div>
 	</div>
 

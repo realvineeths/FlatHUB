@@ -25,7 +25,6 @@ function Seller() {
 
   const [flatList, setFlatList] = useState([])
 
-  // console.log(username);
 
 
   useEffect(()=>{
@@ -38,9 +37,9 @@ function Seller() {
 
   },[])
 
-
+  // http://localhost:8081
   useEffect(() => {
-    Axios.get(`http://localhost:8081/flat/read?username=${username}`).then((response) => {
+    Axios.get(`/flat/read?username=${username}`).then((response) => {
       // console.log(response.data);
       setFlatList(response.data);
     })
@@ -50,7 +49,7 @@ function Seller() {
   }, [username,update])
 
   const addTolist = () => {
-    Axios.post("http://localhost:8081/flat/insert",
+    Axios.post("/flat/insert",
       {
 
         POSTED_BY:username ,
@@ -66,7 +65,7 @@ function Seller() {
   }
 
   const updateFlat = (id) => {
-    Axios.put(`http://localhost:8081/flat/update`,{
+    Axios.put(`/flat/update`,{
       id: id,
       newTarget_price:newTarget_price,
     })
@@ -75,7 +74,7 @@ function Seller() {
   }
 
   const deleteFlat = (id) => {
-    Axios.delete(`http://localhost:8081/flat/delete/${id}`)
+    Axios.delete(`/flat/delete/${id}`)
     .then(()=>setUpdate(!update))
     .catch((e)=>{console.log(e)});
   }
