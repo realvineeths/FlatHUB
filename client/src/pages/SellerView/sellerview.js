@@ -25,7 +25,53 @@ function Seller() {
 
   const [flatList, setFlatList] = useState([])
 
-
+  const cities=['Bangalore', 'Mysore', 'Ghaziabad', 'Kolkata', 'Kochi', 'Jaipur',
+  'Mohali', 'Chennai', 'Siliguri', 'Noida', 'Raigad', 'Bhubaneswar',
+  'Wardha', 'Pune', 'Mumbai', 'Nagpur', 'Deoghar', 'Bhiwadi',
+  'Faridabad', 'Lalitpur', 'Maharashtra', 'Vadodara',
+  'Visakhapatnam', 'Vapi', 'Mangalore', 'Aurangabad', 'Ottapalam',
+  'Vijayawada', 'Belgaum', 'Bhopal', 'Lucknow', 'Kanpur',
+  'Gandhinagar', 'Pondicherry', 'Agra', 'Ranchi', 'Gurgaon', 'Udupi',
+  'Indore', 'Jodhpur', 'Coimbatore', 'Valsad', 'Palghar', 'Surat',
+  'Varanasi', 'Guwahati', 'Amravati', 'Anand', 'Tirupati',
+  'Secunderabad', 'Raipur', 'Vizianagaram', 'Thrissur', 'Satna',
+  'Madurai', 'Chandigarh', 'Shimla', 'Gwalior', 'Rajkot', 'Sonipat',
+  'Allahabad', 'Berhampur', 'Roorkee', 'Dharuhera', 'Latur',
+  'Durgapur', 'Panchkula', 'Solapur', 'Durg', 'Goa', 'Jamshedpur',
+  'Hazaribagh', 'Jabalpur', 'Hosur', 'Morbi', 'Hubli', 'Karnal',
+  'Patna', 'Bilaspur', 'Ratnagiri', 'Meerut', 'Kotdwara',
+  'Jalandhar', 'Amritsar', 'Patiala', 'Ludhiana', 'Alwar', 'Kota',
+  'Panaji', 'Kolhapur', 'Ernakulam', 'Bhavnagar', 'Bharuch',
+  'Asansol', 'Jhansi', 'Margao', 'Anantapur', 'Eluru', 'Bhilai',
+  'Dehradun', 'Guntur', 'Jalgaon', 'Udaipur', 'Gurdaspur',
+  'Neemrana', 'Hassan', 'Sindhudurg', 'Hoshangabad', 'Kottayam',
+  'Dhanbad', 'Navsari', 'Bahadurgarh', 'Nellore', 'Dhule',
+  'Tirunelveli', 'Cuttack', 'Haridwar', 'Nainital', 'Jamnagar',
+  'Kanchipuram', 'Kadi', 'Karad', 'Jagdalpur', 'Panipat',
+  'Muzaffarpur', 'Salem', 'Jhunjhunu', 'Gandhidham', 'Junagadh',
+  'Moradabad', 'Ahmednagar', 'Jalna', 'Bhiwani', 'Palakkad',
+  'Kannur', 'Karjat', 'Akola', 'Jind', 'Gaya', 'Ambala', 'Ajmer',
+  'Hajipur', 'Dharwad', 'Pudukkottai', 'Kollam', 'Ooty', 'Bhandara',
+  'Barabanki', 'Rajpura', 'Palwal', 'Aligarh', 'Erode', 'Rudrapur',
+  'Tenali', 'Ongole', 'Nizamabad', 'Puri', 'Dalhousie', 'Siddipet',
+  'Solan', 'Darbhanga', 'Kadapa', 'Kakinada', 'Agartala', 'Warangal',
+  'Haldwani', 'Osmanabad', 'Bhagalpur', 'Bardhaman', 'Rishikesh',
+  'Chandrapur', 'Bokaro', 'Jharsuguda', 'Bhimavaram', 'Kurnool',
+  'Amroha', 'Hapur', 'Sabarkantha', 'Harda', 'Ujjain', 'Thoothukudi',
+  'Karaikudi', 'Mathura', 'Gadhinglaj', 'Rewari', 'Godhra',
+  'Kharagpur', 'Srikakulam', 'Srinagar', 'Midnapore', 'Rayagada',
+  'Banswara', 'Shirdi', 'Rohtak', 'Pali', 'Hathras', 'Yavatmal',
+  'Balasore', 'Chhindwara', 'Bareilly', 'Vidisha', 'Thanjavur',
+  'Kangra', 'Bikaner', 'Rewa', 'Porbandar', 'Nagaur', 'Nanded',
+  'Rourkela', 'Nadiad', 'Gulbarga', 'Palanpur', 'Bhadrak',
+  'Kurukshetra', 'Dibrugarh', 'Sagar', 'Machilipatnam',
+  'Pathanamthitta', 'Bankura', 'Jammu', 'Idukki', 'Korba', 'Raigarh',
+  'Silchar', 'Arrah', 'Nagaon', 'Karwar', 'Dahod', 'Nagapattinam',
+  'Sikar', 'Angul', 'Baddi', 'Darjeeling', 'Raisen', 'Hoshiarpur',
+  'Beed', 'Gadarwara', 'Jajpur', 'Haldia', 'Chittoor', 'Faizabad',
+  'Malappuram', 'Betul', 'Surendranagar', 'Phagwara', 'Visnagar',
+  'Rajnandgaon', 'Cuddalore', 'Raichur', 'Sambalpur', 'Gondia',
+  'Vellore', 'Bharatpur', 'Bhuj', 'Siwan', 'Washim'];
 
   useEffect(()=>{
     try {
@@ -91,6 +137,16 @@ function Seller() {
         <option value='0' >false</option>
         <option value='1' >true</option>
       </select>
+
+      {/* <select name="City" className="form" onChange={(event) => {
+        setCity(event.target.value)
+      }} >
+              {
+                  cities.map((city,index)=>{
+                      return <option key={index} value={city} >{city}</option>
+                  })
+              }
+      </select>       */}
       <label className="col">BHK_NO</label>
       <input name="BHK_NO" placeholder="No of bedrooms"
         className="form-control" type="Number" onChange={(event) => {
@@ -117,8 +173,13 @@ function Seller() {
           setCity(event.target.value)
         }}></input>
       <button onClick={addTolist}>Submit</button>
-      <h1> Flat_list </h1>
-      {flatList.map((val, key) => {
+      <hr/>
+      <h1 style={{top:"50px"}}> Your Ads : </h1>
+      {
+        flatList.length==0?
+          <h3>Post Your First AD Now!!😉</h3>
+        :
+        flatList.map((val, key) => {
         return <div key={key} className="flat">
           {/* <h2>{val.POSTED_BY}</h2> */}
           <h2>{val.ADDRESS}</h2>
