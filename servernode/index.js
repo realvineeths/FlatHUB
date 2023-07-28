@@ -12,21 +12,21 @@ const app = express();
 //   require("dotenv").config();
 // }
 require("dotenv").config();
-// mongodb://127.0.0.1:27017/emo1
 
 app.use(express.static(path.join(__dirname, '/../client/build')));
 
-mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}).then(() => {
+mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
   console.log('DB connected');
 })
   .catch((e) => {
     console.log(e);
   });
+  // , {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+  // }
+  // useCreateIndex: true,
+  // useFindAndModify: false
 
 require('./models/flats')
 require('./models/user')
