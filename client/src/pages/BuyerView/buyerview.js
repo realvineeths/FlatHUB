@@ -166,13 +166,20 @@ function Buyerview() {
             <div className="container" >
               <div className="row mt-5" >
                   {
+                    posts.length===0? 
+                    <>
+                    <h3><i>To purchase a home is to subconsciously gain the respect of many in your community.</i></h3>
+                    <br/>
+                    <h5>Loading..</h5>
+                    </>
+                      :
                       posts.map((card,index)=>{
                         // <div onClick={console.log('clicked')}>
                         return <Link to={"details/"+card._id} ><RenderCard card={card} key={index}/> </Link>
                         // </div>
-                      }
-                      )    
-                    }
+                      } 
+                      )
+                  }
               </div>
             </div>  
 
