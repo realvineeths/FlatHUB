@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const mongoose = require('mongoose')
 
+
 // if (process.env.NODE_ENV !== "production") {
 //   require("dotenv").config();
 // }
@@ -36,10 +37,13 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(cookieParser(process.env.COOKIE_SECRET));
 
-// const whitelist = process.env.WHITELISTED_DOMAINS
-//   ? process.env.WHITELISTED_DOMAINS.split(",")
-//   : [];
+//Add the client URL to the CORS policy
+
+const whitelist = process.env.WHITELISTED_DOMAINS
+  ? process.env.WHITELISTED_DOMAINS.split(",")
+  : [];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -55,7 +59,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// app.use(passport.initialize());
+app.use(passport.initialize());
 
 app.use("/users", userRouter);
 app.use("/flat", flatRouter);

@@ -65,6 +65,7 @@ function Buyerview() {
     async function getFlats(){
         await fetch(`http://localhost:8081/flat/getprop?bhk=${queryroom}&sqft=${queryarea}&prc=${queryprice}&cty=${querycity}&loc=${query}`)
             .then(function(res){
+                // console.log(res);
                 return res.json();
             })
             .then(function(data){
@@ -117,7 +118,7 @@ function Buyerview() {
             </a>
 
             <li href="#" className="nav-link">
-              <h7>Enter Price Range</h7>
+              <h6>Enter Price Range</h6>
               <input type="range" id="vol" name="vol" min="0.25" max="3000" value={queryprice} onChange={e=>{
                 setQueryprice(e.target.value)
               }}/>  
@@ -125,7 +126,7 @@ function Buyerview() {
             </li>
 
             <li href="#" className="nav-link">
-            <h7>Enter Area Range</h7>
+            <h6>Enter Area Range</h6>
               <input type="range" id="vol" name="vol" min="3" max="30000" value={queryarea} onChange={e=>{
                 setQueryarea(e.target.value)
               }}/>  
@@ -133,7 +134,7 @@ function Buyerview() {
             </li>
 
             <li href="#" className="nav-link">
-            <h7>Enter Bedroom Range</h7>
+            <h6>Enter Bedroom Range</h6>
               <input type="range" id="vol" name="vol" min="0" max="20" value={queryroom} onChange={e=>{
                 setQueryroom(e.target.value)
               }}/>  
@@ -141,7 +142,7 @@ function Buyerview() {
             </li>
 
             <li href="#" className="nav-link">
-            <h7>Enter City</h7><br/>
+            <h6>Enter City</h6><br/>
               {/* <Dropdown querycity={querycity} setQuerycity={setQuerycity}/> */}
               <select onChange={e=>{setQuerycity(e.target.value)}} value={querycity}>
               {
