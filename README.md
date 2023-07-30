@@ -1,5 +1,9 @@
+## Project Deployed Link:
+https://flathub-service.onrender.com/
+
+
 <!-- ABOUT THE PROJECT -->
-## About The Project
+# About The Project
 
 
 ![Screenshot (95)](https://user-images.githubusercontent.com/85937627/205231776-17627926-ae36-42bd-969a-0bf3ad0b3650.png)
@@ -9,11 +13,10 @@
 This a `MERN` stack project, which is built as a platform to `BUY/SELL` a user's flat/property on our website.
 
 
-We have 4 modules total in this project:
+We have 3 modules total in this project:
 * Seller's View
 * Buyer's View
-* Price Prediction
-* Admin Module
+* Price Prediction `(Only available on running locally on our system)`.
 
 ![Screenshot (96)](https://user-images.githubusercontent.com/85937627/205233289-6aa2f738-c45f-4d44-9df8-4d373e56b0fe.png)
 
@@ -33,9 +36,7 @@ We have 4 modules total in this project:
 
 ![Screenshot (100)](https://user-images.githubusercontent.com/85937627/205233921-0163f23e-3bf3-4346-ac61-53397381c27c.png)
 
-### ADMIN MODULE
 
-![Screenshot (101)](https://user-images.githubusercontent.com/85937627/205234019-bc2cdf75-86b7-4fad-a68d-34061fd2ece1.png)
 
 
 ## BUILT WITH
