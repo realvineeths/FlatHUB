@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
 })
   .catch((e) => {
     console.log(e);
-  });
+  })
   // , {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
@@ -68,6 +68,13 @@ app.use(passport.initialize());
 app.use("/users", userRouter);
 app.use("/flat", flatRouter);
 
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '/../client/build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 
 const server = app.listen(process.env.PORT || 8081, function () {

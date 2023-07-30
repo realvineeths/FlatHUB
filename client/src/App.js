@@ -24,7 +24,7 @@ console.log('token..',userToken);
     //incase the user is not authecticated
     <BrowserRouter>
     <Routes>
-            <Route path='*' exact  element={<Login1/>}/>
+            <Route path='/' exact  element={<Login1/>}/>
     </Routes>
     </BrowserRouter>
   ) :userToken ? (
@@ -35,10 +35,8 @@ console.log('token..',userToken);
         <Route path='buyerview/details/:id' element={<Flattemplate/>}/>
         <Route path='/buyerview' exact element={<Buyerview/>}/>
         <Route path='/sellerview' exact element={<Seller/>}/>
-
         <Route path='/predict' exact element={<Predict1/>}/>
       </Routes>
-
     </BrowserRouter>
     </>
 
