@@ -6,23 +6,15 @@ import Footer from '../../components/footer';
 
 function Seller() {
 
-  const [Posted_By, setPosted_By] = useState("")
   const [UNDER_CONSTRUCTION, setUNDER_CONSTRUCTION] = useState(true)
   const [BHK_NO, setBHK_NO] = useState(0)
   const [Square_ft, setSquare_ft] = useState(0)
   const [Adress, setAdress] = useState("")
   const [PRICE, setTarget_price] = useState(0)
-  const [City, setCity] = useState("")
+  const [City, setCity] = useState("Bangalore")
   const [username,setUsername]=useState("")
   const [update, setUpdate] = useState(0);
-  const [newPosted_By, newsetPosted_By] = useState("")
-  const [newUNDER_CONSTRUCTION, newsetUNDER_CONSTRUCTION] = useState(true)
-  const [newBHK_NO, newsetBHK_NO] = useState(0)
-  const [newSquare_ft, newsetSquare_ft] = useState(0)
-  const [newAdress, newsetAdress] = useState("")
   const [newTarget_price, newsetTarget_price] = useState(0)
-  const [newCity, newsetCity] = useState("")
-
   const [flatList, setFlatList] = useState([])
 
   const cities=['Bangalore', 'Mysore', 'Ghaziabad', 'Kolkata', 'Kochi', 'Jaipur',
@@ -83,7 +75,8 @@ function Seller() {
 
   },[])
 
-  // http://localhost:8081
+  // console.log("city",City);
+
   useEffect(() => {
     Axios.get(`/flat/read?username=${username}`).then((response) => {
       // console.log(response.data);
@@ -127,10 +120,12 @@ function Seller() {
 
 
   return (
-    <div className="App container">
+    <>
       <Navbar1/>
-      <label className="col">UNDER_CONSTRUCTION</label>
-      <select name="UNDER_CONSTRUCTION" className="form" onChange={(event) => {
+      <div className="App container">
+      <h2>Post Your Property:</h2>
+      <label className="col" >UNDER_CONSTRUCTION</label>
+      <select name="UNDER_CONSTRUCTION" className="form-control" onChange={(event) => {
         setUNDER_CONSTRUCTION(event.target.value)
       }} >
         <option value="">Select your status</option>
@@ -138,15 +133,6 @@ function Seller() {
         <option value='1' >true</option>
       </select>
 
-      {/* <select name="City" className="form" onChange={(event) => {
-        setCity(event.target.value)
-      }} >
-              {
-                  cities.map((city,index)=>{
-                      return <option key={index} value={city} >{city}</option>
-                  })
-              }
-      </select>       */}
       <label className="col">BHK_NO</label>
       <input name="BHK_NO" placeholder="No of bedrooms"
         className="form-control" type="Number" onChange={(event) => {
@@ -168,12 +154,20 @@ function Seller() {
           setTarget_price(event.target.value)
         }}></input>
       <label className="col">City</label>
-      <input name="City" placeholder="City"
+      {/* <input name="City" placeholder="City"
         className="form-control" type="text" onChange={(event) => {
           setCity(event.target.value)
-        }}></input>
+        }}></input> */}
+        <select className='form-control' onChange={e=>{setCity(e.target.value)}} value={City}>
+        {
+            cities.map((val,index)=>{
+                return <option key={index} value={val} >{val}</option>
+            })
+        }
+        </select>
       <button onClick={addTolist}>Submit</button>
       <hr/>
+
       <h1 style={{top:"50px"}}> Your Ads : </h1>
       {
         flatList.length==0?
@@ -193,10 +187,12 @@ function Seller() {
           <button onClick={()=>deleteFlat(val._id)}>DELETE</button>
         </div>
       })}
-      {/* <div id='footid' className='container-fluid'> 
-        <Footer/>
-      </div> */}
+
     </div>
+    <div id='footid'> 
+        <Footer/>
+    </div>
+    </>
   );
 }
 

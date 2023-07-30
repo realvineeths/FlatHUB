@@ -96,15 +96,14 @@ function Flattemplate() {
                     <button type="button" className="btn btn-xs mb-1 btn-dark" onClick={()=>{alert('Seller details will be mailed to you soon')}}>Contact Seller</button>
                     <button type="button" className="btn btn-xs mb-1 btn-light"onClick={()=>{alert('Successfully added to wishlist')}}>Add to Wishlist</button>
                 </div>
-
-                    
-                </div> 
+                </div>
             </div>
         </div>
     </div>
-    </div>    
-    {/* <Footer/> */}
-    
+    </div>
+    <div id='footid'> 
+        <Footer/>
+    </div>
     </>
 
   )

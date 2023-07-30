@@ -44,7 +44,6 @@ function Footer() {
             <li><a href="#">vinith13.ss@gmail.com</a></li>
             <li><a href="#">shubhankarvk@gmail.com</a></li>
             <li><a href="#">jayendraganesh21@gmail.com</a></li>
-            <li><a href="#">sreenidhi8765@gmail.com</a></li>
             <li>
               <a href="#"></a>
             </li>
@@ -54,7 +53,7 @@ function Footer() {
     	<div class="col-md-3">
     		<h4>Follow Us</h4>
             <ul class="social-network social-circle">
-             <li><a href=""  class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+             <li><a href="https://www.instagram.com/_vineeths_/"  class="icoFacebook" title="Instagram"><i class="fa fa-instagram"></i></a></li>
              <li><a href="https://www.linkedin.com/in/vinith-s-b67580215/" target='_blank' class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
             </ul>				
 		</div>

@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
   }
   
   input , button , select, textarea{
@@ -13,7 +14,9 @@
     margin: 5px;
   
   }
-  
+  .Inner_cont{
+    margin-top: 10px;
+  }
   .flat {
     width: 500px;
     height: 300px;
