@@ -13,23 +13,12 @@ router.get('/getprop',async (req,res)=>{//for buyer's view
         PRICE: {$lte: prc}, 
         BHK_NO: bhk, 
         ADDRESS: {$regex: loc, $options: 'i'}
-    })
+    }).sort( { SQUARE_FT : -1, PRICE: 1 } ) //sorting the results, such that square_ft  in descending and price in ascending order.
     .then(docs => res.json(docs.splice(0, 50)))
     .catch(err => {
         console.log(err);
         res.status(400).json('error'+err)
     });
-
-    // const {loc,cty,sqft,prc,bhk}=req.query;
-    // console.log('in buyers');
-    
-    // try {
-    //     const docs=await flats.find({City:cty,SQUARE_FT:{$lte:sqft},PRICE:{$lte:prc},BHK_NO:bhk,ADDRESS:{$regex:loc,$options : 'i'}});
-    //     res.json(docs.splice(0,50));
-    // } catch (err) {
-    //     console.log(err);
-    //     res.status(400).json('error'+err)
-    // }
 
 })
 
@@ -39,24 +28,6 @@ router.get('/getdetails',async(req,res)=>{//for buyer's view detailed view
     flats.find({_id: propid})
     .then(docs => res.json(docs))
     .catch(err => res.status(400).json('error'+err));
-
-    // const {propid}=req.query;
-    // try {
-    //     const docs = await flats.find({_id: propid});
-    //     res.json(docs);
-    // } catch (err) {
-    //     res.status(400).json('error'+err)
-    // }
-
-    // flats.find({_id:propid},function(err,docs){
-    //     if(err)
-    //     {
-    //         res.status(400).json('error'+err)
-    //     }
-    //     else{
-    //         res.json(docs)
-    //     }
-    // })
 })
 
 
@@ -98,19 +69,6 @@ router.put("/update", async (req, res) => {
         .catch(err => console.error(err));
     })
     .catch(err => console.error(err));
-
-    // console.log(req.body.newTarget_price);
-    // const TARGET_PRICE = req.body.newTarget_price;
-    // const id = req.body.id;
-    // try {
-    //     await flats.findById(id, (err, updated) => {
-    //     updated.PRICE = TARGET_PRICE;
-    //     updated.save();
-    //     res.send("updated");
-    //     })
-    // } catch (err) {
-    //     console.error(err);
-    // }
 });
 
 router.delete("/delete/:id", async (req, res) => {
@@ -120,14 +78,6 @@ router.delete("/delete/:id", async (req, res) => {
 })
 
 router.get("/readadmin", async (req, res) => {
-    // console.log('reading..',req.query)
-    // const {username,loc}=req.query;
-    //  flats.find({POSTED_BY:username,ADDRESS:{$regex:loc,$options : 'i'}}, (err, result) => { 
-    //     if (err) {
-    //         res.send(err)
-    //     }
-    //     return res.send(result.splice(0,50))
-    // });
     const {username, loc} = req.query;
     flats.find({POSTED_BY: username, ADDRESS: {$regex: loc, $options : 'i'}})
     .then(result => res.send(result.splice(0, 50)))
@@ -136,16 +86,6 @@ router.get("/readadmin", async (req, res) => {
 );
 
 router.get("/read", async (req, res) => { //for querying details in seller's view
-    // const {username}=req.query;
-    // console.log('in seller query',username);
-
-    // try {
-    //     const result=await flats.find({POSTED_BY:username})
-    //     return res.send(result.splice(0,50));
-    // } catch (error) {
-    //     res.send(error);
-    // }
-
     const {username} = req.query;
     console.log('in seller query', username);
 
