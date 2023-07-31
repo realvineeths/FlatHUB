@@ -6,11 +6,6 @@ const passport = require("passport");
 const mongoose = require('mongoose')
 const path=require('path')
 const app = express();
-
-
-// if (process.env.NODE_ENV !== "production") {
-//   require("dotenv").config();
-// }
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, '/../client/build')));
@@ -21,12 +16,6 @@ mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING).then(() => {
   .catch((e) => {
     console.log(e);
   })
-  // , {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-  // }
-  // useCreateIndex: true,
-  // useFindAndModify: false
 
 require('./models/flats')
 require('./models/user')
@@ -43,7 +32,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-//Add the client URL to the CORS policy
 
 const whitelist = process.env.WHITELISTED_DOMAINS
   ? process.env.WHITELISTED_DOMAINS.split(",")

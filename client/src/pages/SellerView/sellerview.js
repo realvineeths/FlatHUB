@@ -6,10 +6,10 @@ import Footer from '../../components/footer';
 
 function Seller() {
 
-  const [UNDER_CONSTRUCTION, setUNDER_CONSTRUCTION] = useState(true)
+  const [UNDER_CONSTRUCTION, setUNDER_CONSTRUCTION] = useState('')
   const [BHK_NO, setBHK_NO] = useState(0)
   const [Square_ft, setSquare_ft] = useState(0)
-  const [Adress, setAdress] = useState("")
+  const [Adress, setAdress] = useState('')
   const [PRICE, setTarget_price] = useState(0)
   const [City, setCity] = useState("Bangalore")
   const [username,setUsername]=useState("")
@@ -88,6 +88,19 @@ function Seller() {
   }, [username,update])
 
   const addTolist = () => {
+    if (
+      UNDER_CONSTRUCTION === '' ||
+      BHK_NO === 0 ||
+      Square_ft === 0 ||
+      Adress === '' ||
+      PRICE === 0 ||
+      City === ''
+    ) {
+      alert('Please fill in all the required fields.');
+      return;
+    }
+
+
     Axios.post("/flat/insert",
       {
 

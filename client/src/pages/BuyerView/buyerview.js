@@ -119,7 +119,7 @@ function Buyerview() {
 
             <li href="#" className="nav-link">
               <h6>Enter Price Range</h6>
-              <input type="range" id="vol" name="vol" min="0.25" max="3000" value={queryprice} onChange={e=>{
+              <input type="range" id="vol" name="vol" min="50" max="3000" value={queryprice} onChange={e=>{
                 setQueryprice(e.target.value)
               }}/>  
               <p>₹{queryprice} Lakh only</p>            
@@ -127,7 +127,7 @@ function Buyerview() {
 
             <li href="#" className="nav-link">
             <h6>Enter Area Range</h6>
-              <input type="range" id="vol" name="vol" min="3" max="30000" value={queryarea} onChange={e=>{
+              <input type="range" id="vol" name="vol" min="1000" max="30000" value={queryarea} onChange={e=>{
                 setQueryarea(e.target.value)
               }}/>  
               <p>{queryarea}</p> 
@@ -135,7 +135,7 @@ function Buyerview() {
 
             <li href="#" className="nav-link">
             <h6>Enter Bedroom Range</h6>
-              <input type="range" id="vol" name="vol" min="0" max="20" value={queryroom} onChange={e=>{
+              <input type="range" id="vol" name="vol" min="1" max="20" value={queryroom} onChange={e=>{
                 setQueryroom(e.target.value)
               }}/>  
               <p>{queryroom}</p>               

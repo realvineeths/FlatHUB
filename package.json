@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fullappstart": "cd servernode && node index.js"
+    "appstart": "cd servernode && node index.js",
+    "fullappstart": "cd client && npm i && npm run build && cd .. && cd servernode && node index.js"
   },
   "keywords": [],
   "author": "",
