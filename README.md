@@ -1,6 +1,3 @@
-## Project Deployed Link:
-https://flathub-service.onrender.com/
-
 
 <!-- ABOUT THE PROJECT -->
 # About The Project
