@@ -1,3 +1,4 @@
+## Link for the deployed project : https://flathub-production.up.railway.app/
 
 <!-- ABOUT THE PROJECT -->
 # About The Project
